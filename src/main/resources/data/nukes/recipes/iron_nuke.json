@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " T ",
+    "TIT",
+    " T "
+  ],
+  "key": {
+    "T": {
+      "item": "nukes:coal_nuke"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "nukes:iron_nuke",
+    "count": 1
+  }
+}

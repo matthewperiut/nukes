@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "nukes",
+  "version": "${version}",
+
+  "name": "Nukes",
+  "description": "Adds various tiered explosives in Minecraft!",
+  "authors": [
+    "Slaincow",
+    "ConvexBurrito5"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/nukes-fabric",
+    "sources": "https://github.com/matthewperiut/nukes",
+    "issues": "https://github.com/matthewperiut/nukes/issues"
+  },
+
+  "license": "MIT",
+  "icon": "assets/nukes/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.matthewperiut.nukes.Nukes"
+    ],
+    "client": [
+      "com.matthewperiut.nukes.ClientNukes"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.12.5",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

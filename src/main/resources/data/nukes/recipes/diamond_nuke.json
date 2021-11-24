@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " T ",
+    "TDT",
+    " T "
+  ],
+  "key": {
+    "T": {
+      "item": "nukes:gold_nuke"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "nukes:diamond_nuke",
+    "count": 1
+  }
+}

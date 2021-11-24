@@ -1,0 +1,11 @@
+{
+  "block.nukes.coal_nuke": "Coal Nuke",
+  "block.nukes.iron_nuke": "Iron Nuke",
+  "block.nukes.gold_nuke": "Gold Nuke",
+  "block.nukes.diamond_nuke": "Diamond Nuke",
+  "block.nukes.netherite_nuke": "Netherite Nuke",
+  "block.nukes.warning1": "THIS WILL KILL YOU",
+  "block.nukes.warning2": "Run far away get behind cover",
+  "block.nukes.warning8": "You have 8 seconds",
+  "block.nukes.warning10": "You have 10 seconds"
+}
