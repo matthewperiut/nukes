@@ -15,6 +15,6 @@ public class GoldNukeEntity extends GenericNukeEntity {
     public void explode()
     {
         float f = 21.0F;
-        this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), f, Explosion.DestructionType.BREAK);
+        this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), f, World.ExplosionSourceType.TNT);
     }
 }

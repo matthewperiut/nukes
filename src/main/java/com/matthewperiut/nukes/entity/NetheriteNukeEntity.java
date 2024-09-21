@@ -33,9 +33,9 @@ public class NetheriteNukeEntity extends GenericNukeEntity {
             {
                 float adjustment = -(separator/2) + separator*tx;
                 float adjustment2 = -(separator/2) + separator*ty;
-                this.world.createExplosion(this, this.getX()+adjustment, this.getBodyY(0.0625D), this.getZ()+adjustment2, f, Explosion.DestructionType.BREAK);
+                this.world.createExplosion(this, this.getX()+adjustment, this.getBodyY(0.0625D), this.getZ()+adjustment2, f, World.ExplosionSourceType.TNT);
             }
         }
-        this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), f, Explosion.DestructionType.BREAK);
+        this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), f, World.ExplosionSourceType.TNT);
     }
 }

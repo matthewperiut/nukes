@@ -17,6 +17,6 @@ public class CoalNukeEntity extends GenericNukeEntity {
     public void explode()
     {
         float f = 8.0F;
-        this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), f, Explosion.DestructionType.BREAK);
+        this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), f, World.ExplosionSourceType.TNT);
     }
 }

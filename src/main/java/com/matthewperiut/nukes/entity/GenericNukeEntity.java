@@ -5,8 +5,6 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.Packet;
-import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
@@ -19,7 +17,6 @@ public class GenericNukeEntity extends TntEntity {
     public GenericNukeEntity(EntityType<? extends GenericNukeEntity> entityType, World world) {
         super(entityType, world);
         this.fuseTimer = 80;
-        this.inanimate = true;
     }
 
     public static void update(GenericNukeEntity entity, World world, double x, double y, double z) {
@@ -66,7 +63,7 @@ public class GenericNukeEntity extends TntEntity {
     }
 
     public void explode() { // Don't call this on custom TNT's, unless it's meant to explode as vanilla TNT. Instead, override it.
-        this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625), this.getZ(), 4, Explosion.DestructionType.BREAK);
+        this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625), this.getZ(), 4, World.ExplosionSourceType.TNT);
     }
 
     protected void writeCustomDataToNbt(NbtCompound nbt) {
@@ -98,10 +95,6 @@ public class GenericNukeEntity extends TntEntity {
 
     public int getFuseTimer() {
         return this.fuseTimer;
-    }
-
-    public Packet<?> createSpawnPacket() {
-        return new EntitySpawnS2CPacket(this);
     }
 
     static {

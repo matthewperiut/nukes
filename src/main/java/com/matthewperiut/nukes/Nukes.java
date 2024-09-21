@@ -15,9 +15,10 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,23 +30,23 @@ public class Nukes implements ModInitializer {
 
 
 	public static final EntityType<CoalNukeEntity> COAL_NUKE_ENTITY = Registry.register(
-			Registry.ENTITY_TYPE,
+			Registries.ENTITY_TYPE,
 			new Identifier(MODID, "coal_nuke"),
 			FabricEntityTypeBuilder.create(SpawnGroup.MISC, CoalNukeEntity::new).dimensions(EntityDimensions.fixed(0.98f, 0.98f)).fireImmune().trackRangeBlocks(10).trackedUpdateRate(10).build());
 	public static final EntityType<IronNukeEntity> IRON_NUKE_ENTITY = Registry.register(
-			Registry.ENTITY_TYPE,
+			Registries.ENTITY_TYPE,
 			new Identifier(MODID, "iron_nuke"),
 			FabricEntityTypeBuilder.create(SpawnGroup.MISC, IronNukeEntity::new).dimensions(EntityDimensions.fixed(0.98f, 0.98f)).fireImmune().trackRangeBlocks(10).trackedUpdateRate(10).build());
 	public static final EntityType<GoldNukeEntity> GOLD_NUKE_ENTITY = Registry.register(
-			Registry.ENTITY_TYPE,
+			Registries.ENTITY_TYPE,
 			new Identifier(MODID, "gold_nuke"),
 			FabricEntityTypeBuilder.create(SpawnGroup.MISC, GoldNukeEntity::new).dimensions(EntityDimensions.fixed(0.98f, 0.98f)).fireImmune().trackRangeBlocks(10).trackedUpdateRate(10).build());
 	public static final EntityType<DiamondNukeEntity> DIAMOND_NUKE_ENTITY = Registry.register(
-			Registry.ENTITY_TYPE,
+			Registries.ENTITY_TYPE,
 			new Identifier(MODID, "diamond_nuke"),
 			FabricEntityTypeBuilder.create(SpawnGroup.MISC, DiamondNukeEntity::new).dimensions(EntityDimensions.fixed(0.98f, 0.98f)).fireImmune().trackRangeBlocks(10).trackedUpdateRate(10).build());
 	public static final EntityType<NetheriteNukeEntity> NETHERITE_NUKE_ENTITY = Registry.register(
-			Registry.ENTITY_TYPE,
+			Registries.ENTITY_TYPE,
 			new Identifier(MODID, "netherite_nuke"),
 			FabricEntityTypeBuilder.create(SpawnGroup.MISC, NetheriteNukeEntity::new).dimensions(EntityDimensions.fixed(0.98f, 0.98f)).fireImmune().trackRangeBlocks(10).trackedUpdateRate(10).build());
 
@@ -58,16 +59,16 @@ public class Nukes implements ModInitializer {
 	@Override
 	public void onInitialize()
 	{
-		Registry.register(Registry.BLOCK, new Identifier(MODID, "coal_nuke"), COAL_NUKE_BLOCK);
-		Registry.register(Registry.BLOCK, new Identifier(MODID, "iron_nuke"), IRON_NUKE_BLOCK);
-		Registry.register(Registry.BLOCK, new Identifier(MODID, "gold_nuke"), GOLD_NUKE_BLOCK);
-		Registry.register(Registry.BLOCK, new Identifier(MODID, "diamond_nuke"), DIAMOND_NUKE_BLOCK);
-		Registry.register(Registry.BLOCK, new Identifier(MODID, "netherite_nuke"), NETHERITE_NUKE_BLOCK);
+		Registry.register(Registries.BLOCK, new Identifier(MODID, "coal_nuke"), COAL_NUKE_BLOCK);
+		Registry.register(Registries.BLOCK, new Identifier(MODID, "iron_nuke"), IRON_NUKE_BLOCK);
+		Registry.register(Registries.BLOCK, new Identifier(MODID, "gold_nuke"), GOLD_NUKE_BLOCK);
+		Registry.register(Registries.BLOCK, new Identifier(MODID, "diamond_nuke"), DIAMOND_NUKE_BLOCK);
+		Registry.register(Registries.BLOCK, new Identifier(MODID, "netherite_nuke"), NETHERITE_NUKE_BLOCK);
 
-		Registry.register(Registry.ITEM, new Identifier(MODID, "coal_nuke"), new BlockItem(COAL_NUKE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-		Registry.register(Registry.ITEM, new Identifier(MODID, "iron_nuke"), new BlockItem(IRON_NUKE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-		Registry.register(Registry.ITEM, new Identifier(MODID, "gold_nuke"), new BlockItem(GOLD_NUKE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-		Registry.register(Registry.ITEM, new Identifier(MODID, "diamond_nuke"), new DiamondNukeItem(DIAMOND_NUKE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-		Registry.register(Registry.ITEM, new Identifier(MODID, "netherite_nuke"), new NetheriteNukeItem(NETHERITE_NUKE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+		Registry.register(Registries.ITEM, new Identifier(MODID, "coal_nuke"), new BlockItem(COAL_NUKE_BLOCK, new FabricItemSettings()));
+		Registry.register(Registries.ITEM, new Identifier(MODID, "iron_nuke"), new BlockItem(IRON_NUKE_BLOCK, new FabricItemSettings()));
+		Registry.register(Registries.ITEM, new Identifier(MODID, "gold_nuke"), new BlockItem(GOLD_NUKE_BLOCK, new FabricItemSettings()));
+		Registry.register(Registries.ITEM, new Identifier(MODID, "diamond_nuke"), new DiamondNukeItem(DIAMOND_NUKE_BLOCK, new FabricItemSettings()));
+		Registry.register(Registries.ITEM, new Identifier(MODID, "netherite_nuke"), new NetheriteNukeItem(NETHERITE_NUKE_BLOCK, new FabricItemSettings()));
 	}
 }
